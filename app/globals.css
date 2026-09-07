@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+:root {
+  --blue: #5ec8db;
+  --blue-deep: #3aafc4;
+  --blue-soft: #e8f7fa;
+  --blue-mist: #f4fbfd;
+  --navy: #0a3a4a;
+  --navy-muted: #3d6570;
+  --gold: #e8b923;
+  --white: #ffffff;
+  --background: var(--blue-mist);
+  --foreground: var(--navy);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: var(--blue);
+  --color-brand-deep: var(--blue-deep);
+  --color-brand-soft: var(--blue-soft);
+  --color-brand-mist: var(--blue-mist);
+  --color-navy: var(--navy);
+  --color-navy-muted: var(--navy-muted);
+  --color-gold: var(--gold);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--blue) 35%, white);
+  color: var(--navy);
+}
+
+.atmosphere {
+  background:
+    radial-gradient(ellipse 80% 50% at 10% 0%, rgba(94, 200, 219, 0.22), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(125, 211, 232, 0.18), transparent 50%),
+    linear-gradient(180deg, #f4fbfd 0%, #ffffff 45%, #e8f7fa 100%);
+}
+
+.atmosphere-section {
+  background:
+    linear-gradient(135deg, rgba(232, 247, 250, 0.9) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(244, 251, 253, 0.9) 100%);
+}
+
+.hero-veil {
+  background:
+    linear-gradient(
+      105deg,
+      rgba(10, 58, 74, 0.55) 0%,
+      rgba(10, 58, 74, 0.28) 48%,
+      rgba(58, 175, 196, 0.12) 100%
+    );
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes soft-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-hero-zoom {
+  animation: hero-zoom 8s ease-out both;
+}
+
+.animate-soft-in {
+  animation: soft-in 0.7s ease-out both;
+}
+
+.delay-1 {
+  animation-delay: 0.12s;
+}
+.delay-2 {
+  animation-delay: 0.24s;
+}
+.delay-3 {
+  animation-delay: 0.36s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-fade-up,
+  .animate-hero-zoom,
+  .animate-soft-in {
+    animation: none !important;
+  }
+}
