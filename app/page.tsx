@@ -27,11 +27,11 @@ export default function HomePage() {
 
     
 
-      <section className="atmosphere-section px-5 py-16 sm:px-8 sm:py-20">
+      <section className="atmosphere-section px-5 py-12 sm:px-8 sm:py-16">
         <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <FadeIn>
             <SectionHeading
-              eyebrow="Welcome"
+              eyebrow="Welcome to jema Memorial school"
               title="Where every child can learn and grow"
               description={welcome}
             />
@@ -46,7 +46,7 @@ export default function HomePage() {
           <FadeIn delay={100}>
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
-                src="/images/pupils-campus.jpg"
+                src="/images/cheering.jpg"
                 alt="JEMA Memorial pupils gathered at school"
                 fill
                 className="object-cover"
@@ -57,13 +57,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-16 sm:px-8 sm:py-20">
+      <section className="bg-white px-5  sm:px-8 ">
         <div className="mx-auto max-w-6xl">
           <FadeIn>
             <SectionHeading
               eyebrow="Why families choose us"
-              title="A clear path from early years to primary"
-              description="English-medium learning, steady care, and space for children to build confidence."
+              title="We provide a clear path from early years to primary"
+             
             />
           </FadeIn>
           <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -79,33 +79,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="atmosphere px-5 py-16 sm:px-8 sm:py-20">
+      <section className="atmosphere px-5 mt-8 py-16 sm:px-8 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
             <FadeIn>
               <SectionHeading
-                eyebrow="Vision & mission"
-                title="Confident learners, exceptional care"
-                description={vision}
+                eyebrow="Our core values"
+                title="we believe integrity, respect, excellence, care & Safety teamwork and inclusiveness"
+                // description={vision}
               />
-              <p className="mt-6 text-base leading-relaxed text-navy-muted">
-                {mission}
-              </p>
-            </FadeIn>
-            <FadeIn delay={100}>
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src="/images/pupils-cheer.jpg"
-                  alt="Pupils cheering at JEMA Memorial"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </FadeIn>
-          </div>
-
-          <div className="mt-14 grid gap-8 border-t border-brand/20 pt-12 sm:grid-cols-2 lg:grid-cols-3">
+             <div className="grid gap-8 border-t border-brand/20 pt-6 sm:grid-cols-2 lg:grid-cols-3">
             {values.slice(0, 6).map((value, i) => (
               <FadeIn key={value.title} delay={i * 40}>
                 <h3 className="text-lg font-semibold text-navy">{value.title}</h3>
@@ -115,10 +98,23 @@ export default function HomePage() {
               </FadeIn>
             ))}
           </div>
+            </FadeIn>
+            <FadeIn delay={100}>
+              <div className="relative aspect-[4/3.5] overflow-hidden">
+                <Image
+                  src="/images/pupils-cheer1.png"
+                  alt="Pupils cheering at JEMA Memorial"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                />
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
-      <section className="bg-brand-soft px-5 py-14 sm:px-8 sm:py-16">
+      <section className="bg-brand-soft px-5 sm:px-8 mb-6 ">
         <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[1.2fr_auto]">
           <FadeIn>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-deep">
