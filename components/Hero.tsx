@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section className="relative min-h-[100svh] overflow-hidden">
       <Image
-        src="/images/pupils-group.png"
+        src="/images/pupils-group1.png"
         alt="JEMA Memorial pupils in school tracksuits"
         fill
         priority
@@ -24,10 +24,10 @@ export function Hero() {
 
       <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-16 pt-28 sm:px-8 sm:pb-20 lg:justify-center lg:pb-24">
         <div className="max-w-3xl">
-          <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.28em] text-brand sm:text-sm">
+          <p className="animate-fade-up text-white text-xs font-semibold uppercase tracking-[0.28em] sm:text-sm">
             {school.motto}
           </p>
-          <h1 className="animate-fade-up delay-1 mt-4 text-[2.35rem] font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="animate-fade-up delay-1 mt-4 text-[2.35rem] font-semibold leading-[1.08] tracking-tight text-brand sm:text-5xl lg:text-6xl">
             JEMA Memorial
             <span className="mt-2 block text-[0.72em] font-medium text-white/90">
               Pre & Primary School
@@ -40,7 +40,7 @@ export function Hero() {
           <div className="animate-fade-up delay-3 mt-8 flex flex-wrap gap-3">
             <Link
               href="/admissions"
-              className="rounded-md bg-brand px-6 py-3 text-sm font-semibold text-navy transition hover:bg-white"
+              className="rounded-md bg-brand px-6 py-3 text-sm font-semibold text-black transition hover:bg-white"
             >
               Apply for Admission
             </Link>
