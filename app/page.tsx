@@ -46,7 +46,7 @@ export default function HomePage() {
           <FadeIn delay={100}>
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
-                src="/images/cheering.jpg"
+                src="/images/Cheering.jpg"
                 alt="JEMA Memorial pupils gathered at school"
                 fill
                 className="object-cover"
