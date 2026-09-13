@@ -69,7 +69,12 @@ export function Footer() {
                 </a>
               </li>
             ))}
+
             <li>
+            P O. BOX 434, Masasi, Tanzania
+            </li>
+            <li>
+
               <a
                 href={`mailto:${school.email}`}
                 className="break-all hover:text-white"
