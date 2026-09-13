@@ -19,7 +19,7 @@ export default function ContactPage() {
         description="Visit us in Napupa Ward, Masasi, or reach out by phone or email for admissions, school visits and partnerships."
       />
 
-      <section className="atmosphere-section px-5 py-16 sm:px-8 sm:py-20">
+      <section className="atmosphere-section px-5 py-12 sm:px-8 sm:py-16">
         <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-2">
           <FadeIn>
             <SectionHeading
@@ -43,7 +43,7 @@ export default function ContactPage() {
                 <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-deep">
                   Telephone
                 </dt>
-                <dd className="mt-2 space-y-1">
+                <dd className="mt-2 space-y-1 grid lg:grid-cols-3">
                   {school.phones.map((phone) => (
                     <a
                       key={phone}
