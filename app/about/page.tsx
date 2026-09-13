@@ -6,9 +6,11 @@ import { SectionHeading } from "@/components/SectionHeading";
 import {
   directorMessage,
   headTeacherMessage,
+  mission,
   promises,
   school,
   values,
+  vision,
   welcome,
 } from "@/lib/content";
 
@@ -26,7 +28,7 @@ export default function AboutPage() {
         description="A registered English-medium pre and primary school building confident learners in Napupa Ward, Masasi."
       />
 
-      <section className="atmosphere-section px-5 py-16 sm:px-8 sm:py-20">
+      <section className="atmosphere-section px-5 py-8 sm:px-8 sm:py-6 mt-6">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
           <FadeIn>
             <SectionHeading
@@ -56,9 +58,9 @@ export default function AboutPage() {
             </dl>
           </FadeIn>
           <FadeIn delay={100}>
-            <div className="relative aspect-[4/3] overflow-hidden">
+            <div className="relative aspect-[4/3.5] overflow-hidden">
               <Image
-                src="/images/pupils-campus.jpg"
+                src="/images/pupils-cheer1.png"
                 alt="School campus and pupils"
                 fill
                 className="object-cover"
@@ -69,32 +71,43 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-16 sm:px-8 sm:py-20">
-        <div className="mx-auto max-w-6xl">
+      <section className="atmosphere-section px-5 mb-8 sm:px-8 sm:py-10 mt-5">
+        <div className=" mx-auto max-w-6xl grid lg:grid-cols-3 gap-15">
           <FadeIn>
-            <SectionHeading
-              eyebrow="Core values"
-              title="What guides every day at Jema"
-            />
+          <h3 
+           className="text-navy font-semibold text-3xl"> Our Mission</h3>
+            <h3 
+            className="text-black text-md">{mission}</h3>
           </FadeIn>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {values.map((value, i) => (
-              <FadeIn key={value.title} delay={i * 50}>
-                <div className="border-t-2 border-brand pt-5">
-                  <h3 className="font-semibold text-xl text-navy">
-                    {value.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-navy-muted">
-                    {value.description}
-                  </p>
-                </div>
+
+          <FadeIn> 
+           <h3 
+           className="text-navy font-semibold text-3xl"> Our Vision</h3>
+           
+          
+            <h3 className="text-black text-md"> 
+              {vision}
+            </h3>
+          </FadeIn>
+
+          <div className="mx-auto max-w-6xl text-black">
+          <FadeIn>
+          <h3 
+           className="text-navy font-semibold text-3xl"> Our Promise</h3>
+          </FadeIn>
+          <ul className="">
+            {promises.map((promise, i) => (
+              <FadeIn key={promise} delay={i * 40}>
+                <ul className="text-base text-black ml-2">{promise}.</ul>
               </FadeIn>
             ))}
-          </div>
+          </ul>
+        </div>
+
         </div>
       </section>
 
-      <section className="atmosphere px-5 py-16 sm:px-8 sm:py-20">
+      <section className="atmosphere px-5 py-16 sm:px-8 sm:py-10">
         <div className="mx-auto max-w-6xl space-y-14">
           <FadeIn>
             <SectionHeading
@@ -133,45 +146,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-navy px-5 py-16 sm:px-8 sm:py-20">
-        <div className="mx-auto max-w-6xl">
-          <FadeIn>
-            <SectionHeading
-              light
-              eyebrow="Our promise"
-              title="Every child matters"
-            />
-          </FadeIn>
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {promises.map((promise, i) => (
-              <FadeIn key={promise} delay={i * 40}>
-                <li className="text-lg text-white/90">{promise}.</li>
-              </FadeIn>
-            ))}
-          </ul>
-        </div>
-      </section>
+     
 
-      <section className="px-5 py-16 sm:px-8">
-        <FadeIn>
-          <div className="relative mx-auto max-w-6xl overflow-hidden">
-            <div className="relative aspect-[21/9] min-h-[220px]">
-              <Image
-                src="/images/staff-team.jpg"
-                alt="JEMA Memorial staff team"
-                fill
-                className="object-cover object-[center_35%]"
-                sizes="100vw"
-              />
-            </div>
-            <p className="mt-4 text-center text-sm text-navy-muted">
-              Our community — {school.staff.teaching} teaching and{" "}
-              {school.staff.nonTeaching} non-teaching staff supporting{" "}
-              {school.enrolment} pupils.
-            </p>
-          </div>
-        </FadeIn>
-      </section>
+  
     </>
   );
 }
