@@ -11,9 +11,9 @@ export const school = {
     landmark: "Near National Housing Corporation (NHC)",
     full: "Napupa Ward, Masasi Town Council, Mtwara Region",
   },
-  phones: ["0717689939", "0715178587", "0714520857"],
+  phones: ["+255 717 689 939", "+255 715 178 587", "+255 714 520 857"],
   email: "jemaprimaryschool@gmail.com",
-  hours: "7:30 a.m. – 3:30 p.m",
+  hours: "7:30 a.m – 3:30 p.m",
   colours: ["Blue", "Yellow", "White"],
   director: {
     name: "Heri Ramadhani Hamad",
