@@ -86,7 +86,7 @@ export default function AcademicsPage() {
           <FadeIn delay={100}>
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
-                src="/images/pupils-cheer.jpg"
+                src="/images/Enjoy.jpg"
                 alt="JEMA pupils celebrating together"
                 fill
                 className="object-cover"
