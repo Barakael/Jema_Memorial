@@ -6,16 +6,19 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navLinks, school } from "@/lib/content";
 
-function setThemeColor(color: string) {
-  const metas = document.querySelectorAll('meta[name="theme-color"]');
-  if (metas.length === 0) {
-    const meta = document.createElement("meta");
-    meta.setAttribute("name", "theme-color");
-    meta.setAttribute("content", color);
-    document.head.appendChild(meta);
-    return;
-  }
-  metas.forEach((meta) => meta.setAttribute("content", color));
+const NAVY = "#0a3a4a";
+const WHITE = "#ffffff";
+
+/** iOS Safari reads root canvas + theme-color for the notch/status area. */
+function setStatusBarSurface(color: string) {
+  document.documentElement.style.backgroundColor = color;
+  document.documentElement.style.setProperty("--status-bar-surface", color);
+
+  document.querySelectorAll('meta[name="theme-color"]').forEach((el) => el.remove());
+  const meta = document.createElement("meta");
+  meta.setAttribute("name", "theme-color");
+  meta.setAttribute("content", color);
+  document.head.appendChild(meta);
 }
 
 export function Header() {
@@ -38,14 +41,14 @@ export function Header() {
   const solid = scrolled || !isHome || open;
 
   useEffect(() => {
-    setThemeColor(solid ? "#ffffff" : "#0a3a4a");
+    setStatusBarSurface(solid ? WHITE : NAVY);
   }, [solid]);
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         solid
-          ? "border-b border-brand/20 bg-white/95 shadow-sm backdrop-blur-md"
+          ? "border-b border-brand/20 bg-white shadow-sm"
           : "bg-transparent"
       }`}
       style={{ paddingTop: "env(safe-area-inset-top)" }}
