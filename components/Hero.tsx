@@ -4,13 +4,20 @@ import { school } from "@/lib/content";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100dvh] overflow-hidden">
+    <section
+      className="relative overflow-hidden"
+      style={{
+        // Pull the photo into the iPhone notch / status-bar unsafe area
+        marginTop: "calc(-1 * env(safe-area-inset-top, 0px))",
+        minHeight: "calc(100dvh + env(safe-area-inset-top, 0px))",
+      }}
+    >
       <Image
         src="/images/pupils-group1.png"
         alt="JEMA Memorial pupils in school tracksuits"
         fill
         priority
-        className="animate-hero-zoom object-cover object-[center_55%]"
+        className="animate-hero-zoom object-cover object-[center_40%]"
         sizes="100vw"
       />
       <div
@@ -22,9 +29,16 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-navy/45 via-transparent to-transparent" />
 
-      <div className="relative mx-auto flex min-h-[100dvh] max-w-6xl flex-col justify-end px-5 pb-[max(4rem,env(safe-area-inset-bottom))] pt-[calc(7rem+env(safe-area-inset-top))] sm:px-8 sm:pb-20 lg:justify-center lg:pb-24">
+      <div
+        className="relative mx-auto flex max-w-6xl flex-col justify-end px-5 sm:px-8 sm:pb-20 lg:justify-center lg:pb-24"
+        style={{
+          minHeight: "calc(100dvh + env(safe-area-inset-top, 0px))",
+          paddingTop: "calc(7rem + env(safe-area-inset-top, 0px))",
+          paddingBottom: "max(4rem, env(safe-area-inset-bottom, 0px))",
+        }}
+      >
         <div className="max-w-3xl">
-          <p className="animate-fade-up text-white text-xs font-semibold uppercase tracking-[0.28em] sm:text-sm">
+          <p className="animate-fade-up text-xs font-semibold uppercase tracking-[0.28em] text-white sm:text-sm">
             {school.motto}
           </p>
           <h1 className="animate-fade-up delay-1 mt-4 text-[2.35rem] font-semibold leading-[1.08] tracking-tight text-brand sm:text-5xl lg:text-6xl">

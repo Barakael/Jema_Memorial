@@ -9,10 +9,9 @@ import { navLinks, school } from "@/lib/content";
 const NAVY = "#0a3a4a";
 const WHITE = "#ffffff";
 
-/** iOS Safari reads root canvas + theme-color for the notch/status area. */
+/** iOS Safari status-bar chrome can only use a solid color, not an image. */
 function setStatusBarSurface(color: string) {
   document.documentElement.style.backgroundColor = color;
-  document.documentElement.style.setProperty("--status-bar-surface", color);
 
   document.querySelectorAll('meta[name="theme-color"]').forEach((el) => el.remove());
   const meta = document.createElement("meta");
