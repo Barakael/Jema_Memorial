@@ -6,7 +6,7 @@ type Props = {
 
 export function PageHero({ title, description, eyebrow }: Props) {
   return (
-    <section className="relative overflow-hidden border-b border-brand/15 bg-navy pt-28 pb-16 sm:pt-32 sm:pb-20">
+    <section className="relative overflow-hidden border-b border-brand/15 bg-navy pb-16 pt-[calc(7rem+env(safe-area-inset-top))] sm:pb-20 sm:pt-[calc(8rem+env(safe-area-inset-top))]">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { school } from "@/lib/content";
@@ -22,6 +22,19 @@ export const metadata: Metadata = {
     apple: [{ url: "/images/logo.png", type: "image/png" }],
     shortcut: "/images/logo.png",
   },
+  appleWebApp: {
+    statusBarStyle: "black-translucent",
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#0a3a4a" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a3a4a" },
+  ],
 };
 
 export default function RootLayout({

@@ -4,7 +4,7 @@ import { school } from "@/lib/content";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100svh] overflow-hidden">
+    <section className="relative min-h-[100dvh] overflow-hidden">
       <Image
         src="/images/pupils-group1.png"
         alt="JEMA Memorial pupils in school tracksuits"
@@ -22,7 +22,7 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-navy/45 via-transparent to-transparent" />
 
-      <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-5 pb-16 pt-28 sm:px-8 sm:pb-20 lg:justify-center lg:pb-24">
+      <div className="relative mx-auto flex min-h-[100dvh] max-w-6xl flex-col justify-end px-5 pb-[max(4rem,env(safe-area-inset-bottom))] pt-[calc(7rem+env(safe-area-inset-top))] sm:px-8 sm:pb-20 lg:justify-center lg:pb-24">
         <div className="max-w-3xl">
           <p className="animate-fade-up text-white text-xs font-semibold uppercase tracking-[0.28em] sm:text-sm">
             {school.motto}

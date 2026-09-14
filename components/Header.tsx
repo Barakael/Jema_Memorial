@@ -6,6 +6,18 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navLinks, school } from "@/lib/content";
 
+function setThemeColor(color: string) {
+  const metas = document.querySelectorAll('meta[name="theme-color"]');
+  if (metas.length === 0) {
+    const meta = document.createElement("meta");
+    meta.setAttribute("name", "theme-color");
+    meta.setAttribute("content", color);
+    document.head.appendChild(meta);
+    return;
+  }
+  metas.forEach((meta) => meta.setAttribute("content", color));
+}
+
 export function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -25,13 +37,18 @@ export function Header() {
 
   const solid = scrolled || !isHome || open;
 
+  useEffect(() => {
+    setThemeColor(solid ? "#ffffff" : "#0a3a4a");
+  }, [solid]);
+
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         solid
           ? "border-b border-brand/20 bg-white/95 shadow-sm backdrop-blur-md"
           : "bg-transparent"
       }`}
+      style={{ paddingTop: "env(safe-area-inset-top)" }}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3 sm:px-8">
         <Link href="/" className="flex items-center gap-3">
