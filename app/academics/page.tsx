@@ -10,11 +10,14 @@ import {
   performance,
   school,
 } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Academics",
-  description: `Academic programmes at ${school.shortName} — English-medium learning from Baby class through Grade Two.`,
-};
+  description: `Academic programmes at ${school.shortName} — English-medium learning from Baby class through Grade Two in Masasi.`,
+  path: "/academics",
+  image: "/images/Field-students.jpg",
+});
 
 export default function AcademicsPage() {
   return (

@@ -13,11 +13,14 @@ import {
   vision,
   welcome,
 } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "About",
-  description: `About ${school.name} — vision, mission, values, and leadership in Masasi.`,
-};
+  description: `About ${school.name} — vision, mission, values, and leadership in Masasi, Mtwara Region.`,
+  path: "/about",
+  image: "/images/pupils-campus.jpg",
+});
 
 export default function AboutPage() {
   return (

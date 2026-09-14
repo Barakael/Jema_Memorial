@@ -4,11 +4,14 @@ import { FadeIn } from "@/components/FadeIn";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeading } from "@/components/SectionHeading";
 import { school } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Contact",
-  description: `Contact ${school.name} in ${school.location.full}. Phone, email and enquiry form.`,
-};
+  description: `Contact ${school.name} in ${school.location.full}. Phone, email, and enquiry form for admissions and visits.`,
+  path: "/contact",
+  image: "/images/staff-team.jpg",
+});
 
 export default function ContactPage() {
   return (

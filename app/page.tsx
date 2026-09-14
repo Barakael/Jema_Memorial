@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/FadeIn";
@@ -12,6 +13,18 @@ import {
   welcome,
   whyJema,
 } from "@/lib/content";
+import { createPageMetadata, defaultDescription, siteName } from "@/lib/seo";
+
+export const metadata: Metadata = {
+  ...createPageMetadata({
+    title: siteName,
+    description: defaultDescription,
+    path: "/",
+  }),
+  title: {
+    absolute: siteName,
+  },
+};
 
 const highlights = [
   { label: "Registration", value: school.registration },

@@ -11,11 +11,14 @@ import {
   school,
   uniforms,
 } from "@/lib/content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Admissions",
-  description: `Admissions and 2026 fees for ${school.name}. Apply for Baby through Grade Two.`,
-};
+  description: `Admissions and 2026 fees for ${school.name}. Apply for Baby through Grade Two in Masasi, Mtwara.`,
+  path: "/admissions",
+  image: "/images/Enjoy.jpg",
+});
 
 export default function AdmissionsPage() {
   return (
