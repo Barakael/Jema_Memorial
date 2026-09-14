@@ -17,6 +17,11 @@ export const metadata: Metadata = {
     "English medium",
     "pre primary Tanzania",
   ],
+  icons: {
+    icon: [{ url: "/images/logo.png", type: "image/png" }],
+    apple: [{ url: "/images/logo.png", type: "image/png" }],
+    shortcut: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({
